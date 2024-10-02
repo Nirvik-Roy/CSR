@@ -7,8 +7,8 @@
 }
 .register-box{
     width: 100%;
-    max-width: 80%;
-    min-width: 80%;
+    max-width: 70%;
+    min-width: 70%;
     box-shadow: 0px 0px 5px #ccc;
     display: flex;
     
@@ -19,9 +19,9 @@
     min-width: 40%;
     background-color: #7C5ACB;
     background-image: url('../../Images/Group 74278 (2).png');
-    background-size: 100%;
-    background-position: center center;;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 .right-register-section{
     width: 100%;
@@ -51,8 +51,8 @@ color:  #555555;
 }
 .register-form-filed-box{
     width: 100%;
-    max-width: 50%;
-    min-width: 50%;
+    max-width: 65%;
+    min-width: 65%;
     
 }
 .email-input-div{
@@ -171,10 +171,10 @@ position: relative;
 }
 .register-btn-1{
     width: 96px;
-    height: 50px;
+    height: 40px;
     border-radius: 7px;
     background: #D9D9D980;
-    padding: 13px 34px;
+    padding: 8.5px 38px;
 }
 .register-btn-1 img {
     width: 100%;
