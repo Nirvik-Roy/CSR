@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
-import './Register.css'
+import '../Register/Register.css'
 import mail from '../../Images/Frame.png'
 import google from '../../Images/flat-color-icons_google.png'
 import apple from '../../Images/ic_round-apple.png'
 import facebook from '../../Images/logos_facebook.png'
 import lock from '../../Images/Vector.png'
-import { useNavigate } from 'react-router-dom'
-const Register = () => {
-  const navigate = useNavigate()
-  const [toggle,settoggle]=useState(false)
+import { useNavigate } from 'react-router-dom';
+const Login = () => {
+    const [toggle,settoggle]=useState(false) 
+    const navigate =useNavigate()
+    const navigatefunc = (e) =>{
+    
+      e.preventDefault()
+      navigate('/country')
+    }
   return (
-    <section className='register-section'>
+    <>
+       <section className='register-section'>
     <div className='register-wrapper'>
       <div className='register-box'>
         <div className='left-register-section'></div>
@@ -18,7 +24,7 @@ const Register = () => {
            
             <div className='right-register-form-heading-div'>
               <h2 className='right-register-heading'>CSR</h2>
-              <p className='register-para'>Register into your account</p>
+              <p className='register-para'>Login into your account</p>
             </div>
             <form>
             <div className='register-form-filed-wrapper'>
@@ -48,7 +54,7 @@ const Register = () => {
                  
                 </div>
                 <div className='register-form-button-div d-flex justify-content-center'>
-                <button className='register-button' onClick={(()=>navigate('/otp'))}>Register</button>
+                <button className='register-button' onClick={((e)=>navigatefunc(e))}>Login</button>
               </div>
               <p className='register-with-para'>Or Register With</p>
               <div className='register-options-div'>
@@ -76,7 +82,8 @@ const Register = () => {
     </div>
    
     </section>
+    </>
   )
 }
 
-export default Register
+export default Login

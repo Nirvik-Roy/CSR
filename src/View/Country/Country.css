@@ -1,0 +1,110 @@
+.country-wrapper{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+.country-div-main{
+    width: 100%;
+    max-width: 65%;
+    min-width: 65%;
+}
+.select-country-para{
+    font-family: Poppins;
+font-size: 24px;
+font-weight: 400;
+color: black;
+}
+.countries-display-wrapper{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    box-shadow: 0px 8px 8px 0px #00000076;
+    padding: 0px 20px;
+    margin-top: 30px;
+    border-radius: 7px;
+
+    padding-bottom: 20px;
+}
+.countries-box-wrapper::-webkit-scrollbar{
+    width: 7px;
+}
+.countries-box-wrapper::-webkit-scrollbar-thumb{ 
+    background: #7C5ACB;
+    border-radius: 10px;
+   
+}
+.countries-box-wrapper::-webkit-scrollbar-track{
+    background-color: white;
+}
+.search-div{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 66px;
+    border-radius: 50px;
+    border: 1px solid #0000001A;
+    padding: 0px 70px 0px 20px;
+    font-family: Poppins;
+font-size: 18px;
+font-weight: 400;
+color: #000000;
+
+
+}
+.search-div:focus{
+    outline: none;
+}
+.search-input-div{
+    width: 100%;
+    max-width: 55%;
+    min-width: 55%;
+    position: relative;
+    margin-bottom: 20px;
+}
+.search-input-div img{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+.countries-box-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    row-gap: 25px;
+    overflow-y: scroll;
+    height: 300px;
+}
+.country-box{
+    height: 52px;
+    width: 100%;
+    max-width: 17%;
+    min-width: 17%;
+    border:1px solid rgb(124, 90, 203);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+}
+.country-box:nth-child(1){
+    background-color:rgb(124, 90, 203) ;
+    color: white;
+}
+.country-flag-div img{
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+ height: 100%;
+}
+.country-flag-div{
+    width: 100%;
+    max-width: 16px;
+    min-width: 16px;
+    
+}
+.country-name{
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+
+}
