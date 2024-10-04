@@ -1,0 +1,354 @@
+.general-info-wrapper{
+    display: flex;
+}
+.left-general-info-div{
+    width: 100%;
+    max-width: 60%;
+    min-width: 60%;
+}
+.right-general-info-div{
+    width: 100%;
+    max-width: 40%;
+    min-width: 40%;
+ 
+}
+.general-info-head-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 15px;
+}
+.general-info-head{
+    font-family: Poppins;
+font-size: 26px;
+font-weight: 400;
+color: black;
+
+}
+.watch-demo-para{
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 400;
+color: white;
+
+}
+.video-icon-div{
+    width: 100%;
+    max-width: 18px;
+    min-width: 18px;
+}
+.video-icon-div img{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.watch-more-videos-div{
+    width: 100%;
+    max-width: 256px;
+    min-width: 256px;
+    height: 56px;
+    border-radius: 30px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 15px;
+    background-color: rgb(147, 121, 212);
+}
+.hi-para{
+    font-family: Poppins;
+font-size: 15px;
+font-weight: 400;
+color: black;
+margin-top: 8px;
+}
+.left-general-info-content{
+    background-color: rgb(181, 155, 244);
+    padding: 1px 20px;
+    border-radius: 7px;
+    margin-top: 30px;
+    padding-bottom: 30px;
+}
+.app-name-input-div{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    color: white;
+    margin-top: 12px;
+}
+.app-name-input{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 0px 20px;
+    background-color: transparent;
+    font-family: Plus Jakarta Sans;
+font-size: 14px;
+font-weight: 300;
+letter-spacing: 0.08em;
+color: white;
+}
+.app-name-input:focus{
+    outline: none;
+}
+.csr-label{
+    font-family: Poppins;
+font-size: 26px;
+font-weight: 400;
+color: white;
+
+}
+.form-field:nth-child(1){
+    margin-top: 5px;
+}
+.form-field{
+    margin-top: 25px;
+}
+.upload-logo-para{
+    font-family: Poppins;
+font-size: 26px;
+font-weight: 400;
+color: white;
+
+}
+.upload-image-div{
+    width: 100%;
+    max-width: 65px;
+    min-width: 65px;
+    height: 60px;
+    position: relative;
+    cursor: pointer;
+}
+.upload-image{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.upload-logo-wrapper{
+    width: 100%;
+    max-width: 85%;
+    min-width: 85%;
+    margin-top:40px;
+}
+.upload-image-div-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 10px;
+    margin-top: 10px;
+}
+.upload-image-instruction{
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 300;
+color: white;
+}
+.file-choose{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.upload-logo-description-div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 80%;
+    min-width: 80%;
+}
+.skip-now-para{
+    font-family: Poppins;
+font-size: 22px;
+font-weight: 400;
+color: #B05151;
+margin-top: 10px;
+
+
+}
+.upload-logo-description-para{
+    font-family: Poppins;
+font-size: 22px;
+font-weight: 400;
+color: white;
+margin-top: 10px;
+}
+.image-size-para{
+    font-family: Poppins;
+font-size: 15px;
+font-weight: 300;
+color: white;
+
+}
+.my-app-wrapper{
+    margin-top: 40px;
+}
+.app-logo-wrapper{
+    display: flex;
+    margin-top: 10px;
+}
+.app-logo2{
+    width: 100%;
+    max-width: 90px;
+    max-width: 90px;
+    min-height: 65px;
+
+}
+.app-logo2 img{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100%;
+}
+.my-app-para{
+    font-family: Poppins;
+font-size: 26px;
+font-weight: 400;
+color: white;
+
+}
+.app-color-wrapper{
+    margin-top: 40px;
+}
+.app-color-para{
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 300;
+color: white;
+margin-top: 10px;
+}
+.react-color-div-wrapper{
+    display: flex;
+    column-gap: 40px;
+    margin-top: 20px;
+}
+.theme-choose-wrapper{
+    margin-top:40px;
+    margin-bottom: 40px;
+}
+.theme-choose-para{
+    font-family: Poppins;
+font-size: 22px;
+font-weight: 600;
+color: white;
+
+}
+.theme-btn-div{
+    display: flex;
+    column-gap: 25px;
+   
+}
+.light-theme{
+    width: 100%;
+    max-width: 35%;
+    min-width: 35%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px;
+}
+.dark-theme{
+    width: 100%;
+    max-width: 35%;
+    min-width: 35%;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 20px;
+}
+.light-div{
+    width: 100%;
+    max-width: 55px;
+    min-width: 55px;
+    height: 55px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.light {
+    width: 100%;
+    max-width: 35px;
+    min-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgb(124, 91, 200);
+}
+.light-para{
+    font-family: Poppins;
+font-size: 16px;
+font-weight: 300;
+color: white;
+width: 100%;
+max-width: 60%;
+min-width: 60%;
+
+}
+.dark {
+    width: 100%;
+    max-width: 35px;
+    min-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.phone-div{
+    width: 100%;
+    max-width: 75%;
+    min-width: 75%;
+    height: 600px;
+    border: 5px solid black;
+    border-radius: 50px;
+    background-color: rgb(124, 90, 203);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 140px;
+}
+.phone-head{
+    width: 100%;
+    max-width: 40%;
+    min-width: 40%;
+    height: 29px;
+    border-radius: 50px;
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transform: translateX(70%);
+    
+}
+.phone-app-div{
+    width: 100%;
+    max-width: 90px;
+    max-width: 90px;
+    min-height: 65px;
+
+}
+.phone-app-div img{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100%;
+}
+.app-logo-para{
+    font-family: Poppins;
+font-size: 22px;
+font-weight: 400;
+text-align: center;
+margin-top: 10px;
+
+}

@@ -1,0 +1,13 @@
+.submit-button-1{
+    width: 304px;
+    height: 61px;
+    font-family: Poppins;
+font-size: 28px;
+font-weight: 600;
+text-align: center;
+color: white;
+background: #7C5ACB;
+border: none;
+box-shadow: 0px 12.12px 24.23px 0px #4B417740;
+border-radius: 7px;
+}
