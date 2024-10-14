@@ -11,7 +11,7 @@
     min-width: 70%;
     box-shadow: 0px 0px 5px #ccc;
     display: flex;
-    
+  
 }
 .left-register-section{
     width: 100%;
@@ -27,7 +27,7 @@
     width: 100%;
     max-width: 60%;
     min-width: 60%;
-    padding-bottom: 20px;
+    
 }
 .right-register-heading{
     font-family: Poppins;
@@ -166,7 +166,6 @@ position: relative;
     display: flex;
     justify-content: center;
     column-gap: 10px;
-   
     margin-top: 25px;
 }
 .register-btn-1{
@@ -205,4 +204,115 @@ line-height: 21px;
 color: #7C5ACB;
 
 
+}
+.otp-para{
+    font-family: Poppins;
+font-size: 16.16px;
+font-weight: 400;
+color: #000000;
+margin-top: 30px;
+}
+.heading-div2{
+    margin-top: 150px !important;
+} 
+.otp-input-wrapper{
+    display: flex;
+    column-gap: 10px;
+    margin-top: 30px;
+}
+.enter-otp-input{
+    width: 100%;
+    max-width: 21%;
+    min-width: 21%;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    text-align: center;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16.16px;
+}
+.right2{
+    padding-bottom: 189px;
+}
+@media (max-width:1399px){
+    .register-box{
+        width: 100%;
+        max-width: 80%;
+        min-width: 80%;
+        box-shadow: 0px 0px 5px #ccc;
+        display: flex;
+        
+    }
+}
+@media (max-width:1199px){
+    .register-box{
+        width: 100%;
+        max-width: 95%;
+        min-width: 95%;
+        box-shadow: 0px 0px 5px #ccc;
+        display: flex;
+        
+    }
+}
+@media (max-width:999px){
+    .right-register-section{
+        width: 100%;
+        max-width: 48%;
+        min-width: 48%;
+        padding-bottom: 20px;
+    }
+    .left-register-section{
+        width: 100%;
+        max-width: 52%;
+        min-width: 52%;
+    }
+    .register-form-filed-box{
+        width: 100%;
+        max-width: 75%;
+        min-width: 75%;
+    }
+    .register-btn-1{
+        padding: 8.5px 33px;
+    }
+    .register-with-para::after{
+        width: 100%;
+        max-width: 15%;
+        min-width: 15%;
+    }
+    .register-with-para::before{
+        width: 100%;
+        max-width: 15%;
+        min-width: 15%;
+    }
+}
+@media (max-width:767px){
+ .register-box{
+    flex-direction: column;
+ }
+ .left-register-section{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 100vh;
+ }
+ .right-register-section{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+ }
+ .heading-div2{
+    margin-top: 70px !important;
+ }
+
+}
+@media (max-width:420px){
+    .left-register-section{
+        height: 70vh;
+    }
+    .register-form-filed-box {
+        width: 100%;
+        max-width: 85%;
+        min-width: 85%;
+    }
 }

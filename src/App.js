@@ -6,6 +6,7 @@ import Login from './View/Login/Login';
 import Country from './View/Country/Country';
 import Mainlayout from './Mainlayout/Mainlayout';
 import Generalinfo from './View/General/Generalinfo';
+import SplashScreen from './View/SplashScreen/SplashScreen';
 
 // Import the React component
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/country' element={<Country/>}></Route>
         <Route path='/' element={<Mainlayout/>}>
           <Route path='/generalinfo' element={<Generalinfo/>}></Route>
+          <Route path='/splashscreen' element={<SplashScreen/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

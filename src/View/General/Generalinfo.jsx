@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './Generalinfo.css'
 import video from '../../Images/video-icon.png'
 import upload from '../../Images/upload.png'
@@ -7,16 +7,45 @@ import Reactcolor from '../../Reactcolor/Reactcolor'
 import Button from '../Button/Button'
 import { useSelector } from 'react-redux'
 const Generalinfo = () => {
+  const [imagesrc,setimagesrc] =useState()
+  const [iconsrc,seticonsrc] = useState()
+  const [display,setdisplay]=useState(false)
+  const [display2,setdisplay2]=useState(false)
     const data = useSelector ((state)=>{
         return state.sidebar.isOpen
        })
+       const iconref = useRef()
+   const imgref=useRef()
+       const imageupload = (event) => {
+         const img= event.target.files;
+         const imgsrc=URL.createObjectURL(...img)
+      
+         setimagesrc(imgsrc)
+         imgref.current.value=null;
+        setdisplay(true)
+       }
+       const uploadicon = (event) =>{
+         const icon = event.target.files
+         const src=URL.createObjectURL(...icon)
+         seticonsrc(src)
+         iconref.current.value=null;
+         setdisplay2(true)
+       }
+       const crossimg = () =>{
+         setdisplay(false)
+         setimagesrc('')
+       }
+       const crossicon = () =>{
+        setdisplay2(false)
+       seticonsrc('')
+      }
   return (
     <>
       <section className='section'>
         <div className='universal-wrapper'>
             <div className= {data==true ? 'universal-container2' : 'universal-container' }>
                 <div className='general-info-wrapper'>
-                    <div className='left-general-info-div'>
+                    <div className= {data== true ? 'left-general-info-div2' : 'left-general-info-div' }>
 
 
                         <div className='general-info-head-div'>
@@ -36,7 +65,7 @@ const Generalinfo = () => {
 
                          <div className='left-general-info-content'>
 
-                          <div className='form-field'>
+                          <div className={data == true ? 'form-field mt-4': 'form-field' }>
                             <p className='csr-label'>Let's name your CSR app </p>
                             <div className='app-name-input-div'>
                             <input type='text' className='app-name-input' defaultValue='App Name'></input>
@@ -53,9 +82,12 @@ const Generalinfo = () => {
                           <div className='upload-logo-wrapper'>
                             <p className='upload-logo-para'>Upload Logo</p>
                             <div className='upload-image-div-wrapper'>
-                                <div className='upload-image-div'>
-                                    <img className='upload-img' src={upload}></img>
-                                    <input className='file-choose' type='file'></input>
+                                <div className={display == true ? 'upload-image-div2' : 'upload-image-div' }>
+                                <i onClick={(()=>crossimg())} className= {display == true ? "cross-img fa-solid fa-circle-xmark" : '' }></i>
+                                
+                                    <img className='upload-image' src={display ==true ? imagesrc  : upload}></img>
+                                    {display == false ?  <input ref={imgref} className='file-choose' onChange={((e)=>imageupload(e))} type='file'></input> : '' }
+                                   
                                 </div>
                                 <p className='upload-image-instruction'>To upload your app  image, click the upload image section on the left. (Default Logo Select Atomatically)</p>
                             </div>
@@ -76,10 +108,10 @@ const Generalinfo = () => {
                             <p className='my-app-para'>My App</p>
                             <div className='app-logo-wrapper'>
                                 <div className='app-logo2'>
-                                    <img src={applogo}></img>
+                                    <img src={display == true ? imagesrc : applogo}></img>
                                 </div>
                                 <div className='app-logo2'>
-                                    <img src={applogo}></img>
+                                    <img src={display == true ? imagesrc : applogo}></img>
                                 </div>
                             </div>
                           </div>
@@ -98,9 +130,11 @@ const Generalinfo = () => {
                           <div className='upload-logo-wrapper'>
                             <p className='upload-logo-para'>Upload Icon</p>
                             <div className='upload-image-div-wrapper'>
-                                <div className='upload-image-div'>
-                                    <img src={upload}></img>
-                                    <input className='file-choose' type='file'></input>
+                                <div className={display2 == true ? 'upload-image-div2' : 'upload-image-div' }>
+                                <i onClick={(()=>crossicon())} className= {display2 == true ? "cross-img fa-solid fa-circle-xmark" : '' }></i>
+                                    <img src={display2 == true ? iconsrc : upload}></img>
+                                    {display2 == false ?   <input ref={iconref} onChange={((e)=>uploadicon(e))} className='file-choose' type='file'></input> : ''}
+                                   
                                 </div>
                                 <p className='upload-image-instruction'>To upload your app  icon, click the upload icon section on the left .(Default Icon Select Atomatically)</p>
                             </div>
@@ -143,8 +177,10 @@ const Generalinfo = () => {
                          
 
                     </div>
-                    <div className='right-general-info-div'>
+                    <div className={data==true ? 'right-general-info-div2' : 'right-general-info-div' }>
                        <div className='d-flex justify-content-center'>
+
+                    
                         <div className='phone-div'>
                          <div className='phone-head'></div>
                          <div className='phone-app-div'>
@@ -152,7 +188,7 @@ const Generalinfo = () => {
                          </div>
 
                         </div>
-                        
+                     
                         </div>
                         <p className='app-logo-para'>App Logo & Name</p>
                     </div>

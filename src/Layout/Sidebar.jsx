@@ -49,7 +49,7 @@ const Sidebar = () => {
     <div className='sidebar-icon-img-div'>
     <img src={screen}></img>
     </div>
-      <NavLink className='sidebar-icon-para' to={'/'}>Splash Screen</NavLink>    
+      <NavLink className='sidebar-icon-para' to={'/splashscreen'}>Splash Screen</NavLink>    
     </div>
 
     <div className='sidebar-icon-div'>

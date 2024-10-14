@@ -1,5 +1,5 @@
 import React from 'react'
-import './Otp.css'
+import '../Register/Register.css'
 import { useNavigate } from 'react-router-dom';
 const Otp = () => {
   const navigate =useNavigate()

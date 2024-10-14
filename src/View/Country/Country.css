@@ -108,3 +108,68 @@ font-size: 16px;
 font-weight: 400;
 
 }
+@media (max-width:1399px){
+    .country-div-main{
+        width: 100%;
+        max-width: 75%;
+        min-width: 75%;
+    }
+    .country-name{
+        font-size: 14px;
+    }
+}
+@media (max-width:1199px){
+    .country-div-main{
+        width: 100%;
+        max-width: 85%;
+        min-width: 85%;
+    }
+}
+@media (max-width:991px){
+    .country-div-main{
+        width: 100%;
+        max-width: 95%;
+        min-width: 95%;
+    }
+}
+@media (max-width:999px){
+ .country-box{
+   width: 100%;
+   min-width: 21.5%;
+   max-width: 21.5%;
+ }
+}
+@media (max-width:767px){
+    .country-box{
+        width: 100%;
+        min-width: 29.5%;
+        max-width: 29.5%;
+      }
+}
+@media (max-width:576px){
+    .country-box{
+        width: 100%;
+        min-width: 45%;
+        max-width: 45%;
+      }
+      .search-input-div{
+        width: 100%;
+        max-width: 70%;
+        min-width: 70%;
+      }
+}
+@media (max-width:480px){
+    .country-box{
+        width: 100%;
+        min-width: 95%;
+        max-width: 95%;
+      }
+      .search-input-div{
+        width: 100%;
+        max-width: 95%;
+        min-width: 95%;
+      }
+      .select-country-para{
+        text-align: center;
+      }
+}
