@@ -21,7 +21,7 @@ const Register = () => {
               <p className='register-para'>Register into your account</p>
             </div>
             <form>
-            <div className='register-form-filed-wrapper'>
+            <div className='register-form-filed-wrapper pb-4'>
               <div className='register-form-filed-box'>
               
                 <div className='form-filed'>

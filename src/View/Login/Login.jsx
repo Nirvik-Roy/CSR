@@ -22,12 +22,12 @@ const Login = () => {
         <div className='left-register-section'></div>
         <div className='right-register-section'>
            
-            <div className='right-register-form-heading-div'>
+            <div className='right-register-form-heading-div '>
               <h2 className='right-register-heading'>CSR</h2>
               <p className='register-para'>Login into your account</p>
             </div>
             <form>
-            <div className='register-form-filed-wrapper'>
+            <div className='register-form-filed-wrapper pb-4'>
               <div className='register-form-filed-box'>
               
                 <div className='form-filed'>

@@ -55,14 +55,33 @@ const SplashScreen = () => {
          slideref.current.value=null;
          setshowslide2(true)
       }
+
+      const NextArrow = ({ className, style, onClick }) => {
+        return (
+            <i  onClick={onClick} class="fa-solid fa-greater-than"></i>
+        );
+      };
+      
+      const PrevArrow = ({ className, style, onClick }) => {
+        return (
+     
+            <i  onClick={onClick} class="fa-solid fa-less-than"></i>
+     
+        );
+      };
+      
        var settings = {
         dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        
+        nextArrow:<NextArrow/>,
+        prevArrow:<PrevArrow/>,
+       
       };
+
+
   return (
     <section className='section'>
     <div className='universal-wrapper'>
