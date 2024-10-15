@@ -13,8 +13,8 @@ p{
 }
 .sidebar-main{
   width: 100%;
-  max-width: 396px;
-  min-width: 396px;
+  max-width: 320px;
+  min-width: 320px;
   height: 100vh;
   position: fixed;
   z-index: 9;
@@ -26,8 +26,8 @@ p{
 }
 .sidebar-main2{
   width: 100%;
-  max-width: 396px;
-  min-width: 396px;
+  max-width: 320px;
+  min-width: 320px;
   height: 100vh;
   position: fixed;
   z-index: 9;
@@ -136,22 +136,22 @@ margin-top: 5px;
   padding: 0px 20px 0px 40px;
 }
 .universal-container{
-  width: calc(100% - 396px);
-  max-width: calc(100% - 396px);
-  min-width: calc(100% - 396px);
+  width: calc(100% - 320px);
+  max-width: calc(100% - 320px);
+  min-width: calc(100% - 320px);
   transition: 0.3s linear all;
 }
 .universal-container2{
-  width: calc(100% - 70px);
-  max-width: calc(100% - 70px);
-  min-width: calc(100% - 70px);
+  width: calc(100% - 50px);
+  max-width: calc(100% - 50px);
+  min-width: calc(100% - 50px);
   transition: 0.3s linear all;
 }
 .header-content{
   display: flex;
   justify-content: end;
   align-items:center ;
-  padding: 10px 0px;
+ padding-top: 8px;
 }
 .admin-div{
   display: flex;
@@ -198,5 +198,5 @@ color: #000;
   min-width: 100%;
 }
 .section{
-  padding-bottom: 2.8%;
+  padding-bottom: 1%;
 }

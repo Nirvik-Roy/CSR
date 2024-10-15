@@ -1,8 +1,10 @@
 .submit-button-1{
-    width: 304px;
-    height: 61px;
+    width: 100%;
+    max-width: 200px;
+    min-width: 200px;
+    height: 50px;
     font-family: Poppins;
-font-size: 28px;
+font-size: 22px;
 font-weight: 600;
 text-align: center;
 color: white;
