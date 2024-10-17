@@ -1,6 +1,4 @@
-.left-splash-content::-webkit-scrollbar{
-    display: none;
-}
+
 .left-splash-content{
   
     width: 100%;
@@ -12,6 +10,16 @@
     overflow-y: scroll;
     height: 525px;
 }
+.left-splash-content::-webkit-scrollbar{
+    width: 5px;
+ }
+ .left-splash-content::-webkit-scrollbar-thumb{
+  background-color: rgb(140, 102, 230);
+  border-radius: 10px;
+ }
+ .left-splash-content::-webkit-scrollbar-track{
+     background-color: transparent;
+ }
 .splash-img-para{
     font-family: Poppins;
 font-size: 14px;
@@ -133,7 +141,7 @@ color: white;
     width: 100%;
     max-width: 75%;
     min-width: 75%;
-    height: 254px;
+    height: 318px;
     border-radius: 40px;
     transition: 0.3s linear all;;
 }
@@ -145,13 +153,21 @@ color: white;
     border-radius: 40px;
 }
 .slide2{
-    border: 1px solid rgb(124, 89, 205);
+    border: 1px solid #7c59cd;
     width: 100%;
     max-width: 75%;
     min-width: 75%;
     height: 254px;
     border-radius: 40px;
     transition: 0.3s linear all;;
+    position: relative;
+}
+.cross-img2 {
+    position: absolute;
+    right: -8px;
+    color: #5a4196;
+    cursor: pointer;
+    font-size: 18px;
 }
 .slide2 img{
     width: 100%;
@@ -165,9 +181,10 @@ color: white;
     width: 100%;
     max-width: 65%;
     min-width: 65%;
-    height: 254px;
+    height: 318px;
     border-radius: 40px;
-    transition: 0.3s linear all;;
+    transition: 0.3s linear all;
+    position: relative;
 }
 .slide4 img{
     width: 100%;
@@ -696,33 +713,60 @@ margin-top: 10px;
     margin-top: 10px;
     padding-bottom: 10px;
 }
-.fa-greater-than{
+.arrow-div{
     position: absolute;
-    top: 45%;
-    right: 0%;
-    font-size: 22px;
-    font-weight: 100;
+    width: 100%;
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6e4fb6;
+    top: 40%;
+    right: -10px;
+  
+}
+.arrow-div2{
+    position: absolute;
+    width: 100%;
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6e4fb6;
+    top: 40%;
+   left: -50px;
+    
+}
+.fa-greater-than{
+    font-size: 16px;
+    font-weight: 800;
     cursor: pointer;
+    color: white;
 }
 .fa-less-than{
     position: absolute;
-    top: 45%;
-    left: -5%;
-    font-size: 22px;
-    font-weight: 100;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
     cursor: pointer;
 }
 .splash-screen-tabs-btn{
     display: flex;
     column-gap: 15px;
-    padding: 0px 15px;
+   
     margin-top: 10px;
     transition: 0.3s linear all;
 }
 .splash-screen-tabs-btn2{
     display: flex;
     column-gap: 15px;
-    padding: 0px 15px;
+    
     margin-top: 10px;
     transition: 0.3s linear all;
 }

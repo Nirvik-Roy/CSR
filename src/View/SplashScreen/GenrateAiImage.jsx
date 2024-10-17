@@ -21,54 +21,32 @@ const GenrateAiImage = () => {
     const [imgsrc,setimgsrc] = useState()
     const [showcrop,setshowcrop] =useState(false)
     const [textarea,settextarea]=useState(false)
+    const [currentindex,setcurrentindex]=useState(0)
     const imgref= useRef()
     const showimage = (event) =>{
-        setimgsrc(event.target.src)
-        
+        setimgsrc(slideimg1)
+        setphoneimgsrc(slideimg1);
     }
     const data = useSelector ((state)=>{
         return state.sidebar.isOpen
        })
-       const splashref= useRef()
-       const splashimage = (event) => {
-         const splash= event.target.files;
-          const splashsrc = URL.createObjectURL(...splash)
-          setsplashScreen(splashsrc)
-          splashref.current.value=null;
-          setdisplay(true)
-       }
-       const splashcross = () =>{
-         setdisplay(false)
-         setsplashScreen('')
-       }
-       const slideref=useRef()
-       const slideupload = (event) =>{
-         const slide= event.target.files;
-          const slidesrc = URL.createObjectURL(slide)
-          setslideimage(slidesrc)
-          slideref.current.value=null;
-          setshowslide(true)
-          setshowcrop(true)
-       }
-       const slideupload2 = (event) =>{
-        const slide= event.target.files;
-         const slidesrc = URL.createObjectURL(...slide)
-         setslideimage2(slidesrc)
-         slideref.current.value=null;
-         setshowslide2(true)
-      }
+      
+  
 
-      const NextArrow = ({ className, style, onClick }) => {
+     const NextArrow = ({ className, style, onClick }) => {
         return (
-            <i  onClick={onClick} class="fa-solid fa-greater-than"></i>
+            <div className='arrow-div'>
+<i  onClick={onClick} class="fa-solid fa-greater-than"></i>
+            </div>
+            
         );
       };
       
       const PrevArrow = ({ className, style, onClick }) => {
         return (
-     
+            <div className='arrow-div2'>
             <i  onClick={onClick} class="fa-solid fa-less-than"></i>
-     
+            </div>
         );
       };
       
@@ -106,34 +84,38 @@ const GenrateAiImage = () => {
         },
 
       ]
+      const [imageDisplayed, setImageDisplayed]=useState(
+       Array.from(data2.length).fill(false)
+      )
       const textref=useRef()
+      const [clickedCount, setClickedCount] = useState(0);
       const sendMessage = () =>{
-        if(textref.current.value != ''){
+        if(textref.current.value != '' &&  clickedCount < data2.length ){
           textref.current.value = ''
-          setshowslide2(true)
-          setslideimage2(slideimg2)
+          const updatedImages = [...imageDisplayed];
+      updatedImages[clickedCount] = true; // Update the slide to show image
+      setImageDisplayed(updatedImages);
+      setClickedCount(clickedCount + 1);
+      
         }
         
       }
-
+      const [phoneimgsrc,setphoneimgsrc]=useState()
+      const removeImg = (e,index) =>{
+        const updatedImages = [...imageDisplayed];
+        updatedImages[index] = false;
+        setClickedCount(clickedCount - 1); //
+        setImageDisplayed(updatedImages)
+        
+        
+         // Update the state
+    //    if(phoneimgsrc == slideimg1){
+    //       setimgsrc('')
+    //       console.log('hello')
+    //    }
+    }
       //Image Uploading Part//////
-      const [imageSources,setImageSources]=useState(
-        Array(data2.length).fill(null)
-      )
-      const slideupload5 = (e,index)=>{
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-              // Update the image source for the specific slide
-              const updatedImages = [...imageSources];
-              updatedImages[index] = reader.result; // Store the base64 image URL
-              setImageSources(updatedImages); // Update the state
-            };
-            reader.readAsDataURL(file); // Read the file as a base64 URL
-            
-          }
-      }
+      
   return (
     <>
     <div className={data == true ? 'general-info-wrapper2' : 'general-info-wrapper' }>
@@ -170,8 +152,9 @@ const GenrateAiImage = () => {
 {data2.map((ele,index)=>{
      return (
         <div className={data == true ? 'slide4' : 'slide2' }>
+        <i onClick={((e)=>removeImg(e,index))}  className= { imageDisplayed[index] ?  "cross-img2 fa-solid fa-circle-xmark" : '' }></i>
 
-<div className={showslide2 == true ? 'display' : 'slide-upload-wrapper' }>
+<div className={imageDisplayed[index] == true ? 'display' : 'slide-upload-wrapper' }>
 <div className='d-flex justify-content-center'>
 <div className='upload-slide-img-div' onClick={(()=>settextarea(true))}>
     <img  src={slideimg3}></img>
@@ -181,7 +164,7 @@ const GenrateAiImage = () => {
 <p className='slide-img-para text-center'>Generate Your Own 
 Image Using AI</p>
 </div>
-{showslide2 == true ?  <img ref={imgref} onClick={((e)=>showimage(e))}  src={ slideimage2 }></img> : ''}
+{imageDisplayed[index] == true ?  <img ref={imgref} onClick={((e)=>showimage(e))}  src={ slideimg1 }></img> : ''}
 
 
 </div>
@@ -258,8 +241,8 @@ Image Using AI</p>
 
 
 </div>
-<div className={data==true ? 'right-general-info-div2' : 'right-general-info-div' }>
-{/* <div className='d-flex justify-content-center'> */}
+<div className={data==true ? 'right-general-info-div2 ' : 'right-general-info-div' }>
+<div className='d-flex justify-content-end'>
 
 
 <div className={data == true ? 'phone-div3': 'phone-div2'}>
@@ -268,7 +251,7 @@ Image Using AI</p>
 
 </div>
 
-{/* </div> */}
+</div>
 
 
 </div>

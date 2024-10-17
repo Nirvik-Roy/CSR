@@ -7,11 +7,15 @@ import Country from './View/Country/Country';
 import Mainlayout from './Mainlayout/Mainlayout';
 import Generalinfo from './View/General/Generalinfo';
 import SplashScreen from './View/SplashScreen/SplashScreen';
+import WelcomeScreen from './View/WelcomeScreen/WelcomeScreen';
+import Csrai from './View/CsrAi/Csrai';
+
 
 // Import the React component
 function App() {
   return (
   <>
+  
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Register/>}></Route>
@@ -21,6 +25,8 @@ function App() {
         <Route path='/' element={<Mainlayout/>}>
           <Route path='/generalinfo' element={<Generalinfo/>}></Route>
           <Route path='/splashscreen' element={<SplashScreen/>}></Route>
+          <Route path='/welcomescreen' element={<WelcomeScreen/>}></Route>
+          <Route path='/csrai' element={<Csrai/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

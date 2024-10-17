@@ -12,78 +12,10 @@ import Button from '../Button/Button'
 import question from '../../Images/Rectangle 4310.png'
 import { useSelector } from 'react-redux'
 const UploadImage = () => {
-    const [splashScreen,setsplashScreen]=useState()
-    const [showslide,setshowslide]=useState(false)
-    const [showslide2,setshowslide2]=useState(false)
-    const [display,setdisplay]=useState(false)
-    const [slideimage,setslideimage]=useState()
-    const [slideimage2,setslideimage2]=useState()
+
     const [imgsrc,setimgsrc] = useState()
     const [showcrop,setshowcrop] =useState(false)
-    const [imgindex,setimgindex]=useState()
-    const imgref= useRef()
-    const showimage = (event) =>{
-        setimgsrc(event.target.src)
-        
-    }
-    const data = useSelector ((state)=>{
-        return state.sidebar.isOpen
-       })
-       const splashref= useRef()
-       const splashimage = (event) => {
-         const splash= event.target.files;
-          const splashsrc = URL.createObjectURL(...splash)
-          setsplashScreen(splashsrc)
-          splashref.current.value=null;
-          setdisplay(true)
-       }
-       const splashcross = () =>{
-         setdisplay(false)
-         setsplashScreen('')
-       }
-       const slideref=useRef()
-       const slideupload = (event,index) =>{
-         const slide= event.target.files;
-          const slidesrc = URL.createObjectURL(...slide)
-          setslideimage(slidesrc)
-          slideref.current.value=null;
-          setshowslide(true)
-          setshowcrop(true)
-          setimgindex(index)
-       }
-       const slideupload2 = (event) =>{
-        const slide= event.target.files;
-         const slidesrc = URL.createObjectURL(...slide)
-         setslideimage2(slidesrc)
-         slideref.current.value=null;
-         setshowslide2(true)
-      }
-
-      const NextArrow = ({ className, style, onClick }) => {
-        return (
-            <i  onClick={onClick} class="fa-solid fa-greater-than"></i>
-        );
-      };
-      
-      const PrevArrow = ({ className, style, onClick }) => {
-        return (
-     
-            <i  onClick={onClick} class="fa-solid fa-less-than"></i>
-     
-        );
-      };
-      
-       var settings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        nextArrow:<NextArrow/>,
-        prevArrow:<PrevArrow/>,
-       
-      };
-      const data2 =[
+    const data2 =[
         {
             num:1,
         },
@@ -107,9 +39,55 @@ const UploadImage = () => {
         },
 
       ]
-      const [imageSources,setImageSources]=useState(
+    const [imageSources,setImageSources]=useState(
         Array(data2.length).fill(null)
       )
+    
+    const imgref= useRef()
+    const showimage = (event) =>{
+        setimgsrc(event.target.src)
+        
+    }
+    const data = useSelector ((state)=>{
+        return state.sidebar.isOpen
+       })
+       
+      
+       
+       const slideref=useRef()
+
+      
+
+       const NextArrow = ({ className, style, onClick }) => {
+        return (
+            <div className='arrow-div'>
+<i  onClick={onClick} class="fa-solid fa-greater-than"></i>
+            </div>
+            
+        );
+      };
+      
+      
+      const PrevArrow = ({ className, style, onClick }) => {
+        return (
+            <div className='arrow-div2'>
+            <i  onClick={onClick} class="fa-solid fa-less-than"></i>
+            </div>
+        );
+      };
+      
+       var settings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        nextArrow:<NextArrow/>,
+        prevArrow:<PrevArrow/>,
+       
+      };
+     
+    const [phoneimgsrc,setphoneimgsrc]=useState()
       const slideupload5 = (e,index)=>{
         const file = e.target.files[0];
         if (file) {
@@ -118,16 +96,26 @@ const UploadImage = () => {
               // Update the image source for the specific slide
               const updatedImages = [...imageSources];
               updatedImages[index] = reader.result; // Store the base64 image URL
-              setImageSources(updatedImages); // Update the state
+              setImageSources(updatedImages);
+              setphoneimgsrc(updatedImages) // Update the state
             };
             reader.readAsDataURL(file); // Read the file as a base64 URL
-            
+            setshowcrop(true)
+            e.target.value = ''
           }
+      }
+      const removeImg = (e,index) =>{
+          const updatedImages = [...imageSources];
+          updatedImages[index] = null; // Set the image source to null to remove the image
+          setImageSources(updatedImages); // Update the state
+         if(phoneimgsrc[index] == imgsrc){
+            setimgsrc('')
+         }
       }
       
   return (
     <>
-                        <div className='general-info-wrapper'>
+                        <div className={data ==true ? 'general-info-wrapper2' : 'general-info-wrapper'}>
             
             <div className= {data== true ? 'left-general-info-div2' : 'left-general-info-div' }>
 
@@ -161,10 +149,11 @@ const UploadImage = () => {
                    {data2.map((ele,index)=>{
                          return (
                             <div key={index} className={data == true ? 'slide4' : 'slide2' }>
-
+                            <i onClick={((e)=>removeImg(e,index))}  className= { imageSources[index] ?  "cross-img2 fa-solid fa-circle-xmark" : '' }></i>
 <div className={imageSources[index] ? 'display' : 'slide-upload-wrapper' }>
 <div className='d-flex justify-content-center'>
 <div className='upload-slide-img-div'>
+
     <img src={slideimg3}></img>
     <input ref={slideref} onChange={((e)=>slideupload5(e,index))} type='file' className='upload-slide-input'></input>
 </div>
@@ -237,8 +226,8 @@ const UploadImage = () => {
                  
 
             </div>
-            <div className={data==true ? 'right-general-info-div2' : 'right-general-info-div' }>
-               {/* <div className='d-flex justify-content-center'> */}
+            <div className={data==true ? 'right-general-info-div2 ' : 'right-general-info-div' }>
+               <div className='d-flex justify-content-end'>
 
             
                 <div className={data == true ? 'phone-div3': 'phone-div2'}>
@@ -247,7 +236,7 @@ const UploadImage = () => {
 
                 </div>
              
-                {/* </div> */}
+                </div>
                
                
             </div>

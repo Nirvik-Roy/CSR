@@ -56,7 +56,7 @@ const Sidebar = () => {
     <div className='sidebar-icon-img-div'>
     <img src={logo}></img>
     </div>
-      <NavLink className='sidebar-icon-para' to={'/'}>Welcome Screen</NavLink>    
+      <NavLink className='sidebar-icon-para' to={'/welcomescreen'}>Welcome Screen</NavLink>    
     </div>
    
 
@@ -64,7 +64,7 @@ const Sidebar = () => {
     <div className='sidebar-icon-img-div'>
     <img src={ai}></img>
     </div>
-      <NavLink className='sidebar-icon-para' to={'/'}> My CSR AI (Upload Documents)</NavLink>    
+      <NavLink className='sidebar-icon-para' to={'/csrai'}> My CSR AI (Upload Documents)</NavLink>    
     </div>
 
 
@@ -72,7 +72,7 @@ const Sidebar = () => {
     <div className='sidebar-icon-img-div'>
     <img src={library}></img>
     </div>
-      <NavLink className='sidebar-icon-para' to={'/'}> onation</NavLink>    
+      <NavLink className='sidebar-icon-para' to={'/'}> Module Library</NavLink>    
     </div>
 
 

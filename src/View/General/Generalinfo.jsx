@@ -6,6 +6,7 @@ import applogo from '../../Images/app-logo.png'
 import Reactcolor from '../../Reactcolor/Reactcolor'
 import Button from '../Button/Button'
 import { useSelector } from 'react-redux'
+import GeneralInfohead from './GeneralInfohead'
 const Generalinfo = () => {
   const [imagesrc,setimagesrc] =useState()
   const [iconsrc,seticonsrc] = useState()
@@ -44,7 +45,7 @@ const Generalinfo = () => {
       <section className='section overflow'>
         <div className='universal-wrapper'>
             <div className= {data==true ? 'universal-container2' : 'universal-container' }>
-            <div className='general-info-head-div'>
+            {/* <div className='general-info-head-div'>
                             <p className='general-info-head'>General Info</p>
 
 
@@ -57,7 +58,8 @@ const Generalinfo = () => {
 
 
                         </div>
-                        <p className='hi-para'>Hi let's name Your App and Brand it</p>
+                        <p className='hi-para'>Hi let's name Your App and Brand it</p> */}
+                        <GeneralInfohead/>
                 <div className={data == true ? 'general-info-wrapper2' : 'general-info-wrapper' }>
                     <div className= {data== true ? 'left-general-info-div2' : 'left-general-info-div' }>
 
@@ -181,7 +183,7 @@ const Generalinfo = () => {
                     <div className={data==true ? 'right-general-info-div2' : 'right-general-info-div' }>
                        
 
-                    <div className='d-flex justify-content-center'>
+                    <div className='d-flex justify-content-end'>
                         <div className={data == true ? 'phone-div-general' : 'phone-div' }>
                          <div className='phone-head'></div>
                          <div className='phone-app-div'>
@@ -191,7 +193,7 @@ const Generalinfo = () => {
                         </div>
                         </div>
                      
-                        <p className='app-logo-para'>App Logo & Name</p>
+                        <p className={data == true ? 'app-logo-para csr-ai-para-padding' : 'app-logo-para ' }>App Logo & Name</p>
                     </div>
                 </div>
             </div>
